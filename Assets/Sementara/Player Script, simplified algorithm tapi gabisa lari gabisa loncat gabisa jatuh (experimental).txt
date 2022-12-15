@@ -1,0 +1,48 @@
+// waittime
+        if(waitTime > 0) {
+            waitTime++;
+            if(waitTime == 30) {
+                waitTime = 1;
+                if(animator.GetBool("isJump") == true) {
+                    animator.SetBool("isJump", false);
+                }
+                if(animator.GetBool("isJatuh") == true) {                    
+                    animator.SetBool("isJatuh", false);
+                }
+            }
+            return;
+        }
+
+        // loncat
+        if(Input.GetKey(KeyCode.Space)) {
+            resetState();
+            animator.SetBool("isJump", true);
+            waitTime = 1;
+            return;
+        }
+
+        // lari
+        if(leftFoot == false && rightFoot == false) { // ketika reset (kaki gaada yang maju)
+            Debug.Log("kaki gaada yang maju");
+            if(Input.GetKey(KeyCode.LeftArrow)) {
+                leftFoot = true;
+                speedX += 1;
+            } else if (Input.GetKey(KeyCode.RightArrow)) {
+                rightFoot = true;
+                speedX += 1;
+            }
+        } else if (leftFoot == false) { // ketika kaki kanan sudah maju
+            if(Input.GetKey(KeyCode.LeftArrow)) { // ganti kaki
+                changeRunningFeet("kiri");
+            } else if (Input.GetKey(KeyCode.RightArrow)) { // jatuh karena kanan dua kali
+                jatuh();
+                return;
+            }
+        } else if (rightFoot == false) { // ketika kaki kiri sudah maju
+            if(Input.GetKey(KeyCode.LeftArrow)) { // jatuh karena kiri dua kali
+                jatuh();
+                return;
+            } else if (Input.GetKey(KeyCode.RightArrow)) { // ganti kaki
+                changeRunningFeet("kanan");
+            }
+        }

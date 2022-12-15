@@ -1,0 +1,52 @@
+// bool isRunning = false;
+        // if (isInGround)
+        // {
+        //     if(Input.GetKey(KeyCode.LeftArrow)) {
+        //         if (this.leftFoot) {
+        //             animator.SetBool("isJatuh", true);
+        //             resetState();
+        //         } else {
+        //             player.velocity = new Vector2(speedX, 0);
+        //             speedX += 1;
+        //             this.leftFoot = true;
+        //             this.rightFoot = false;
+        //             isRunning = true;
+        //             if(animator.GetBool("isJatuh") == true) {
+        //                 animator.SetBool("isJatuh", false);
+        //             }
+        //         }
+        //     } else if (Input.GetKey(KeyCode.RightArrow)) {
+        //         if (this.rightFoot) {
+        //             animator.SetBool("isJatuh", true);
+        //             resetState();
+        //         } else {
+        //             player.velocity = new Vector2(speedX, 0);
+        //             speedX += 1;
+        //             this.leftFoot = false;
+        //             this.rightFoot = true;
+        //             isRunning = true;
+        //             if(animator.GetBool("isJatuh") == true) {
+        //                 animator.SetBool("isJatuh", false);
+        //             }
+        //         }
+        //     } else if (Input.GetKey(KeyCode.Space)) {
+        //         isInGround = false;
+        //         animator.SetBool("isJump", true);
+        //         player.velocity = new Vector2(1, jumpSpeed) * speedX;
+        //     } else if (animator.GetBool("isJump") == true) {
+        //         animator.SetBool("isJump", false);
+        //     }
+
+        //     if(isRunning) {
+        //         animator.SetBool("isRun", true);
+        //     } else {
+        //         animator.SetBool("isRun", false);
+        //     }
+
+        //     if (isRunning && animator.GetBool("isJatuh") == false) {
+        //         Vector2 v = Vector2.zero;
+        //         v.x = 2;
+        //         float speed = 1 * Time.deltaTime;
+        //         transform.Translate(v * speed);
+        //     }
+        // }
